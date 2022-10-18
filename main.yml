@@ -1,0 +1,4 @@
+- hosts: cisco
+  # become: true
+  roles:
+    - hostname
