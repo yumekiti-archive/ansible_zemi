@@ -7,3 +7,8 @@ ansible-galaxy init <name>
 ```shell
 ansible-playbook -i hosts main.yml
 ```
+
+## 疎通確認
+```shell
+ansible -i hosts cisco -m ping
+```
