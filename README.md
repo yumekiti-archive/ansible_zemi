@@ -12,3 +12,8 @@ ansible-playbook -i hosts main.yml
 ```shell
 ansible -i hosts cisco -m ping
 ```
+
+## 変更を無視
+```shell
+git update-index --skip-worktree hosts
+```
