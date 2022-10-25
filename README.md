@@ -17,3 +17,31 @@ ansible -i hosts cisco -m ping
 ```shell
 git update-index --skip-worktree hosts
 ```
+
+```shell=
+en
+conf t
+
+interface GigabitEthernet 0/0/0
+    ip address dhcp
+    no shut
+exit
+
+username admin password cisco
+
+ip domain-name cisco.com
+
+hostname R1
+
+crypto key generate rsa
+1024
+
+ip ssh version 2
+
+line vty 0 4
+    login local
+    transport input ssh
+exit
+
+enable secret cisco
+```
