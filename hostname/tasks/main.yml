@@ -1,5 +1,5 @@
 ---
 # tasks file for hostname
-# - name: test
-#   ios_command:
-#     commands: "show version"
+- name: test
+  ios_command:
+    commands: "show version"
