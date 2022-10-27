@@ -1,11 +1,10 @@
-[cisco]
-10.16.x.x
-
 [cisco:vars]
 ansible_python_interpreter=/usr/bin/python3
 ansible_ssh_user=admin
-ansible_ssh_common_args='-F ssh.cfg'
-ansible_user=admin
-ansible_password=cisco
+cisco_enable_secret=cisco
+
 ansible_connection=network_cli
 ansible_network_os=ios
+
+[cisco]
+10.16.10.77
