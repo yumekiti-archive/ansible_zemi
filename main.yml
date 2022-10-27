@@ -3,5 +3,5 @@
   connection: local
   tasks:
     - name: send show version
-      ios_command:
-        commands: "show version"
+      ios_config:
+        commands: hostname R1
