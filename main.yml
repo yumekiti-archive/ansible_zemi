@@ -1,4 +1,7 @@
 - hosts: cisco
-  # become: true
-  roles:
-    - show
+  gather_facts: no
+  connection: local
+  tasks:
+    - name: send show version
+      ios_command:
+        commands: "show version"

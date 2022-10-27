@@ -1,8 +1,0 @@
----
-- hosts: cisco
-  gather_facts: no
-
-  tasks:
-    - name: send show version
-      ios_command:
-        commands: "show version"
