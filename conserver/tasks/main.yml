@@ -1,0 +1,39 @@
+---
+# tasks file for conserver
+- name: apt update
+  apt:
+    update_cache: true
+
+- name: Install packages
+  apt:
+    name:
+      - conserver-server
+      - conserver-client
+
+- name: template /etc/conserver/conserver.cf
+  template:
+    src: conserver.cf.j2
+    dest: /etc/conserver/conserver.cf
+    owner: root
+    group: root
+    mode: 0644
+  notify: restart conserver
+
+- name: template /etc/conserver/conserver.passwd
+  template:
+    src: conserver.passwd.j2
+    dest: /etc/conserver/conserver.passwd
+    owner: root
+    group: root
+    mode: 0600
+  notify: restart conserver
+
+- name: restart conserver
+  service:
+    name: conserver
+    state: restarted
+
+- name: enable conserver
+  service:
+    name: conserver
+    enabled: yes
